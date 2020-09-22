@@ -22,20 +22,22 @@ public class LoginActivity extends Activity {
      EditText email, password;
      Button loginB;
      TextView register, forgotPW;
-     //DatabaseHelper db;
-    FirebaseAuth fAuth;
+     FirebaseAuth fAuth;
+
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-       //db= new DatabaseHelper(this);
+
         email = (EditText) findViewById(R.id.emaillg);
         password = (EditText) findViewById(R.id.pswlg);
         loginB = (Button) findViewById(R.id.buttonLog);
         register = (TextView) findViewById(R.id.register);
         forgotPW = (TextView)findViewById(R.id.forgotPW);
+
+        fAuth=FirebaseAuth.getInstance();
 
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +80,7 @@ public class LoginActivity extends Activity {
         forgotPW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(), ForgotPasswordActivity.class);
+                Intent intent= new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,8 +88,8 @@ public class LoginActivity extends Activity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
+                Intent in = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(in);
             }
         });
     }
