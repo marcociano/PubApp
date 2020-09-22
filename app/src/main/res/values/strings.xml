@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PubApp</string>
+    <string name="username">  Username</string>
+    <string name="password">  Password</string>
+    <string name="log">Login</string>
+    <string name="regquest">Non sei ancora registrato?</string>
+    <string name="register">REGISTRATI!</string>
+    <string name="reg">Registrazione</string>
+    <string name="confirmPsw">Conferma Password</string>
+    <string name="registrati">Registrati</string>
+    <string name="se_sei_gi_registrato">Se sei già registrato</string>
+    <string name="accedi">Accedi</string>
+    <string name="recupera">Recupera</string>
+    <string name="password_dimenticata">Password dimenticata?\t</string>
+    <string name="email">Email</string>
+    <string name="recuperapassword">Recupera Password</string>
+</resources>
