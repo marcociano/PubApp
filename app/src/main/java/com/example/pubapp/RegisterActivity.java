@@ -66,25 +66,30 @@ public class RegisterActivity extends Activity {
                     emailReg.setError("Il campo email non può essere vuoto");
                     return;
                 }
+                else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    emailReg.setError("L'input immesso non rispetta il formato. Es: example@gmail.com");
+                    return;
+                }
+
                 if (psw.isEmpty()) {
                     passwordReg.setError("Il campo password non può essere vuoto");
                     return;
                 }
+                else if (psw.length() < 6) {
+                    passwordReg.setError("La password deve essere lunga almeno 6 caratteri");
+                    return;
+                }
+
                 if (confPsw.isEmpty()) {
                     checkPasswordReg.setError("il campo conferma password non può essere vuoto");
                     return;
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    emailReg.setError("L'input immesso non rispetta il formato. Es: example@gmail.com");
-                    return;
-                }
-                if (psw.length() < 6) {
-                    passwordReg.setError("La password deve essere lunga almeno 6 caratteri");
-                    return;
-                }
+
+
                 if (!psw.equals(confPsw)) {
                     passwordReg.setError("Le password immesse non corrispondono");
                     checkPasswordReg.setError("Le password immesse non corrispondono");
+                    return;
                 }
                     fAuth.createUserWithEmailAndPassword(email, psw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
