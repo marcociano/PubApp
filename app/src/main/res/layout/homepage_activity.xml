@@ -20,6 +20,7 @@
         android:typeface="serif"/>
 
     <TextView
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
@@ -29,8 +30,31 @@
         android:gravity="center"
         android:background="@drawable/black_gradient"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/black_tendline" />
+
+    <ImageView
+        android:id="@+id/scan"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/qrscan"/>
 
 
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="100dp"
+        android:layout_toLeftOf="@+id/scan"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/logout" />
 
 
 </RelativeLayout>
