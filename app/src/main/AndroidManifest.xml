@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".ForgotPasswordActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".QRScanActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>
