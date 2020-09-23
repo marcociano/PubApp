@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class LoginActivity extends Activity {
      Button loginB;
      TextView register, forgotPW;
      FirebaseAuth fAuth;
-
+     ProgressBar progressLogin;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,10 @@ public class LoginActivity extends Activity {
         loginB = (Button) findViewById(R.id.buttonLog);
         register = (TextView) findViewById(R.id.register);
         forgotPW = (TextView)findViewById(R.id.forgotPW);
-
+        progressLogin = (ProgressBar)findViewById(R.id.progress_login);
         fAuth=FirebaseAuth.getInstance();
+
+        progressLogin.setVisibility(View.INVISIBLE);
 
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,8 @@ public class LoginActivity extends Activity {
                     return;
                 }
 
+                progressLogin.setVisibility(View.VISIBLE);
+
                 fAuth.signInWithEmailAndPassword(emaillg, psw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -71,6 +76,7 @@ public class LoginActivity extends Activity {
                             startActivity(in);
                         }else{
                             Toast.makeText(getApplicationContext(), "Errore!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            progressLogin.setVisibility(View.GONE);
                         }
                     }
                 });

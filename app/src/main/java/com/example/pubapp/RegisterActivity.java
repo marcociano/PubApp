@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,8 @@ public class RegisterActivity extends Activity {
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
     String userID;
+    ProgressBar progressRegister;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
@@ -43,7 +46,7 @@ public class RegisterActivity extends Activity {
 
         fAuth= FirebaseAuth.getInstance();
         fstore=FirebaseFirestore.getInstance();
-
+        progressRegister = (ProgressBar)findViewById(R.id.progress_register);
         emailReg = (EditText)findViewById(R.id.emailReg);
         passwordReg = (EditText)findViewById(R.id.pswReg);
         checkPasswordReg = (EditText)findViewById(R.id.checkPsw);
@@ -54,6 +57,7 @@ public class RegisterActivity extends Activity {
             finish();
         }
 
+        progressRegister.setVisibility(View.INVISIBLE);
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +95,9 @@ public class RegisterActivity extends Activity {
                     checkPasswordReg.setError("Le password immesse non corrispondono");
                     return;
                 }
+
+                progressRegister.setVisibility(View.VISIBLE);
+
                     fAuth.createUserWithEmailAndPassword(email, psw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -116,6 +123,7 @@ public class RegisterActivity extends Activity {
                                 startActivity(in);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Errore!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                progressRegister.setVisibility(View.GONE);
                             }
                         }
                     });

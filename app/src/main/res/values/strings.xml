@@ -14,4 +14,9 @@
     <string name="password_dimenticata">Password dimenticata?\t</string>
     <string name="email">Email</string>
     <string name="recuperapassword">Recupera Password</string>
+    <string name="homepage">Homepage</string>
+    <string name="title_activity_homepage">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
