@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -25,8 +26,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import javax.xml.transform.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -58,26 +57,34 @@ public class HomepageActivity extends Activity implements ZXingScannerView.Resul
                 finish();
             }
         });
+        scanQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Dexter.withActivity(HomepageActivity.this).withPermission(Manifest.permission.CAMERA).withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        scannerView.setResultHandler(HomepageActivity.this);
+                        scannerView.startCamera();
+                    }
 
-            Dexter.withActivity(HomepageActivity.this).withPermission(Manifest.permission.CAMERA).withListener(new PermissionListener() {
-                @Override
-                public void onPermissionGranted(PermissionGrantedResponse response) {
-                    scannerView.setResultHandler(HomepageActivity.this);
-                    scannerView.startCamera();
-                }
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        Toast.makeText(getApplicationContext(), "Devi accettare i permessi", Toast.LENGTH_SHORT).show();
+                    }
 
-                @Override
-                public void onPermissionDenied(PermissionDeniedResponse response) {
-                    Toast.makeText(getApplicationContext(), "Devi accettare i permessi", Toast.LENGTH_SHORT).show();
-                }
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
 
-                @Override
-                public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                    }
+                }).check();
 
-                }
-            }).check();
-        }
+            }
+
+        });
+
+    }
+
 
 
     protected void onDestroy(){
@@ -85,8 +92,9 @@ public class HomepageActivity extends Activity implements ZXingScannerView.Resul
         scannerView.stopCamera();
     }
 
+
     @Override
-    public void handleResult(com.google.zxing.Result result) {
+    public void handleResult(Result result) {
         menu.setVisibility(View.VISIBLE);
         scannerView.startCamera();
     }

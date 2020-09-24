@@ -49,7 +49,7 @@
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="25dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:gravity="center"/>
 
 
