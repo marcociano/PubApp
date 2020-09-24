@@ -3,7 +3,6 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".HomepageActivity"
         android:background="@drawable/menu_background">
 
@@ -12,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PUBAPP"
+        android:background="@drawable/black_gradient"
         android:textSize="25sp"
         android:textColor="#ffff"
         android:gravity="center"
@@ -30,20 +30,45 @@
         android:gravity="center"
         android:background="@drawable/black_gradient"/>
 
+    <me.dm7.barcodescanner.zxing.ZXingScannerView
+        android:id="@+id/zxscan"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/tomenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scan"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/radious_button"
+        android:text="Vai al Menu"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="25dp"
+        android:visibility="visible"
+        android:gravity="center"/>
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/black_tendline" />
 
-    <ImageView
+    <Button
         android:id="@+id/scan"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/qrscan"/>
+        android:onClick="toScan"
+        android:background="@drawable/qrscan"
+        tools:ignore="OnClick" />
 
 
     <ImageView

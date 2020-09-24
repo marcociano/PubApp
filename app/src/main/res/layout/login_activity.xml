@@ -61,6 +61,7 @@
         android:textColor="#ffff"
         android:importantForAutofill="no" />
 
+
     <Button
         android:id="@+id/buttonLog"
         android:layout_width="wrap_content"
