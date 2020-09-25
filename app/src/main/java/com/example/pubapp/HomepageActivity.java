@@ -83,6 +83,13 @@ public class HomepageActivity extends Activity implements ZXingScannerView.Resul
 
         });
 
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(), FoodmenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -98,4 +105,7 @@ public class HomepageActivity extends Activity implements ZXingScannerView.Resul
         menu.setVisibility(View.VISIBLE);
         scannerView.startCamera();
     }
+
+
+
 }
