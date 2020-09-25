@@ -10,7 +10,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PUBAPP"
+        android:text="@string/pubapp"
         android:background="@drawable/black_gradient"
         android:textSize="25sp"
         android:textColor="#ffff"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
-        android:text="Per andare al menu scannerizza il codice QR premendo l'apposito pulsante qui sotto"
+        android:text="@string/per_andare_al_menu_scannerizza_il_codice_qr_premendo_l_apposito_pulsante_qui_sotto"
         android:textSize="20sp"
         android:textColor="#ffff"
         android:gravity="center"
@@ -48,7 +48,7 @@
         android:text="Vai al Menu"
         android:textAllCaps="false"
         android:textColor="#ffff"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:visibility="invisible"
         android:gravity="center"/>
 

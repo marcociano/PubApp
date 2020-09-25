@@ -19,4 +19,18 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="per_andare_al_menu_scannerizza_il_codice_qr_premendo_l_apposito_pulsante_qui_sotto">Per andare al menu scannerizza il codice QR premendo l\'apposito pulsante qui sotto</string>
+    <string name="pubapp">PUBAPP</string>
+    <string name="rendiamo_soddisfatti_i_nostri_clienti_ncon_i_nostri_prodotti_nvieni_a_scoprire_una_vasta_gamma_di_prelibatezze_ti_aspettiamo">Rendiamo soddisfatti i nostri clienti\ncon i nostri prodotti.\nVieni a scoprire una vasta gamma di prelibatezze. Ti aspettiamo!</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
