@@ -37,4 +37,13 @@
     <string name="carrello">Carrello</string>
     <string name="ordine">Ordine</string>
     <string name="signout">Signout</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profilo</string>
+    <string name="logout">Logout</string>
+    <string name="aboout_us">Aboout us</string>
+    <string name="galleria_foto">Galleria Foto</string>
+    <string name="title_activity_food_menu">FoodMenuActivity</string>
+    <string name="dolci">Dolci</string>
+    <string name="bevande">Bevande</string>
+    <string name="menu">Menu</string>
 </resources>
